@@ -1,0 +1,14 @@
+[[navigation]]
+group = "Pages"
+label = "Homepage"
+path = "content/index.md"
+
+[[editable]]
+name = "Hero Section"
+path = "content/index.md"
+schema = """
+heading: text
+subheading: text
+cta_text: text
+cta_link: url
+"""

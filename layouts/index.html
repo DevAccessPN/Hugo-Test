@@ -1,0 +1,59 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero p-8 font-sans">
+  <div class="container mx-auto flex justify-between items-center">
+    <div>
+      <h1 class="text-5xl font-bold capitalize leading-none">
+        {{ .Params.hero.heading }}
+      </h1>
+      <p class="text-lg mt-4">{{ .Params.hero.subheading }}</p>
+      <a href="{{ .Params.hero.cta_link }}" class="btn-primary mt-6"
+        >{{ .Params.hero.cta_text }}</a
+      >
+    </div>
+    <img src="{{ .Params.hero.image }}" alt="Hero Image" class="w-1/2" />
+  </div>
+</section>
+
+<!-- Icon Listing Section -->
+<section class="icon-listing bg-white text-center bg-sient-blue">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-8">{{ .Params.icon_listing.heading }}</h2>
+    <div class="flex justify-between items-center gap-8">
+      {{ range .Params.icon_listing.icons }}
+      <div class="icon">
+        <img src="{{ .icon }}" alt="{{ .alt }}" class="mx-auto mb-4" />
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Service Cards Section -->
+<section class="services bg-gray-50 pt-5 pb-10">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">
+      {{ .Params.service_cards.heading }}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      {{ range .Params.service_cards.cards }}
+      <div class="service-card border rounded-lg p-6">
+        <img
+          src="{{ .image }}"
+          alt="{{ .heading }}"
+          class="rounded-t-md mb-4"
+        />
+        <span class="tag text-sm bg-blue-200 text-blue-800 px-2 py-1 rounded"
+          >{{ .tag }}</span
+        >
+        <h3 class="text-xl font-bold mt-2">{{ .heading }}</h3>
+        <p class="text-gray-600 mt-2">{{ .body }}</p>
+        <a href="{{ .link }}" class="btn-secondary mt-4 inline-block"
+          >Learn More</a
+        >
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

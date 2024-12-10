@@ -1,0 +1,18 @@
+{
+  "name": "hugo-tailwind-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"hugo server --buildDrafts\" \"tailwindcss -i ./assets/css/main.css -o ./static/css/main.css --watch\"  --kill-others"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
+  }
+}
